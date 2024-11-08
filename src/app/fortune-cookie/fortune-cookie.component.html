@@ -1,1 +1,10 @@
-<p>fortune-cookie works!</p>
+<div class="fortune-cookie-container">
+    <h1>Fortune Cookie</h1>
+    <button (click)="crackCookie()">Crack Open the Cookie</button>
+    
+    <div *ngIf="fortune" class="fortune">
+      <p>Your Fortune: </p>
+      <p><strong>{{ fortune }}</strong></p>
+    </div>
+  </div>
+  
