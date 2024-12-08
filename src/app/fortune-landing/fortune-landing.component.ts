@@ -29,4 +29,9 @@ export class FortuneLandingComponent {
     const randomIndex = Math.floor(Math.random() * this.fortunes.length);
     this.fortune = this.fortunes[randomIndex];
   }
+
+  reset() {
+    this.isCookieCracked = false;
+    this.fortune = '';
+  }
 }
