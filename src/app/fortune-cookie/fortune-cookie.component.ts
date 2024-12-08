@@ -1,8 +1,10 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-fortune-cookie',
   standalone: true,
+  imports: [CommonModule],
   templateUrl: './fortune-cookie.component.html',
   styleUrls: ['./fortune-cookie.component.scss']
 })
@@ -19,7 +21,6 @@ export class FortuneCookieComponent {
   fortune: string = '';
 
   crackCookie() {
-    // Randomly select a fortune from the fortunes array
     const randomIndex = Math.floor(Math.random() * this.fortunes.length);
     this.fortune = this.fortunes[randomIndex];
   }
