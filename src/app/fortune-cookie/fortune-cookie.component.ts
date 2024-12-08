@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-fortune-cookie',
+  standalone: true,
   templateUrl: './fortune-cookie.component.html',
-  styleUrls: ['./fortune-cookie.component.css']
+  styleUrls: ['./fortune-cookie.component.scss']
 })
 export class FortuneCookieComponent {
   fortunes: string[] = [
