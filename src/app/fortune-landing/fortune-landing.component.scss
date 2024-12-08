@@ -1,4 +1,4 @@
-.fortune-cookie-container {
+.fortune-landing-container {
     text-align: center;
     margin-top: 50px;
   }
@@ -21,4 +21,15 @@
     font-weight: bold;
     color: #2f4f4f;
   }
+
+  .app-fortune-cookie-container {
+    display: flex;
+    justify-content: center;
+  }
   
+  .fortune-btn-container {
+    padding-top: 24px;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+  }

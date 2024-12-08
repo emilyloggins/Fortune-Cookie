@@ -1,14 +1,18 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { FortuneCookieComponent } from './fortune-cookie/fortune-cookie.component';
 
 @Component({
-  selector: 'app-fortune-cookie',
+  selector: 'app-fortune-landing',
   standalone: true,
-  imports: [CommonModule],
-  templateUrl: './fortune-cookie.component.html',
-  styleUrls: ['./fortune-cookie.component.scss']
+  imports: [CommonModule, FortuneCookieComponent],
+  templateUrl: './fortune-landing.component.html',
+  styleUrls: ['./fortune-landing.component.scss']
 })
-export class FortuneCookieComponent {
+export class FortuneLandingComponent {
+
+  isCookieCracked: boolean = false;
+
   fortunes: string[] = [
     'You will have a great day!',
     'A pleasant surprise is waiting for you.',
@@ -21,6 +25,7 @@ export class FortuneCookieComponent {
   fortune: string = '';
 
   crackCookie() {
+    this.isCookieCracked = true;
     const randomIndex = Math.floor(Math.random() * this.fortunes.length);
     this.fortune = this.fortunes[randomIndex];
   }
