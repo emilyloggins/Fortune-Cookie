@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { FortuneCookieComponent } from './fortune-cookie/fortune-cookie.component';
+import { FortuneLandingComponent } from './fortune-landing/fortune-landing.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FortuneCookieComponent],
+  imports: [RouterOutlet, FortuneLandingComponent],
   standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
