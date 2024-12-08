@@ -16,7 +16,7 @@ export class FortuneService {
     const fortunes = localStorage.getItem(this.localStorageKey);
     return fortunes ? JSON.parse(fortunes) : [];
   }
-  
+
   clearFortunes(): void {
     localStorage.removeItem(this.localStorageKey);
   }

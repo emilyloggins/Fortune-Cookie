@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FortuneCookieComponent } from './fortune-cookie/fortune-cookie.component';
+import { FortuneService } from '../services/fortune.service';
 
 @Component({
   selector: 'app-fortune-landing',
@@ -11,6 +12,12 @@ import { FortuneCookieComponent } from './fortune-cookie/fortune-cookie.componen
 })
 export class FortuneLandingComponent {
 
+  constructor(private fortuneService: FortuneService) { }
+  
+  ngOnInit() {
+    this.savedFortunes = this.getSavedFortunes();
+  }
+  
   isCookieCracked: boolean = false;
 
   fortunes: string[] = [
@@ -22,8 +29,9 @@ export class FortuneLandingComponent {
     'Happiness is on its way to you.'
   ];
 
-  
   fortune: string = '';
+
+  savedFortunes: string[] = [];
 
   crackCookie() {
     this.isCookieCracked = true;
@@ -37,6 +45,10 @@ export class FortuneLandingComponent {
   }
 
   saveFortune() {
-    
+    this.fortuneService.saveFortune(this.fortune);
+  }
+
+  getSavedFortunes(): string[] {
+    return this.fortuneService.getFortunes();
   }
 }

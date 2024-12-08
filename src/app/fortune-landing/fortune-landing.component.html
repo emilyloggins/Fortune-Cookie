@@ -11,5 +11,9 @@
         <button (click)="reset()">Reset</button>
       </div>
     </div>
+
+    <div *ngIf="savedFortunes">
+      <li *ngFor="let fortune of savedFortunes">{{ fortune }}</li>
+    </div>
   </div>
   
