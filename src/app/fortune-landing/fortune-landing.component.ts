@@ -21,6 +21,7 @@ export class FortuneLandingComponent {
     'A new adventure is on the horizon.',
     'Happiness is on its way to you.'
   ];
+
   
   fortune: string = '';
 
@@ -33,5 +34,9 @@ export class FortuneLandingComponent {
   reset() {
     this.isCookieCracked = false;
     this.fortune = '';
+  }
+
+  saveFortune() {
+    
   }
 }
