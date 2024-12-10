@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { FirebaseApp, initializeApp } from 'firebase/app';
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, onAuthStateChanged } from 'firebase/auth';
+import { environment } from '../../environments/environment.dev';
 
 @Injectable({
   providedIn: 'root',
@@ -10,16 +11,7 @@ export class AuthService {
   private auth;
 
   constructor() {
-    // Initialize Firebase
-    this.firebaseApp = initializeApp({
-      apiKey: "YOUR_API_KEY",
-      authDomain: "YOUR_AUTH_DOMAIN",
-      projectId: "YOUR_PROJECT_ID",
-      storageBucket: "YOUR_STORAGE_BUCKET",
-      messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-      appId: "YOUR_APP_ID"
-    });
-
+    this.firebaseApp = initializeApp(environment.firebaseConfig);
     this.auth = getAuth(this.firebaseApp);
   }
 
