@@ -1,6 +1,8 @@
 <div style="text-align:center">
   <h1>Welcome to the Fortune Cookie App!</h1>
 
-
+  <router-outlet></router-outlet>
+  
   <app-fortune-landing *ngIf="User"></app-fortune-landing>
+  <app-user-login *ngIf="!User"></app-user-login>
 </div>

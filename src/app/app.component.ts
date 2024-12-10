@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { FortuneLandingComponent } from './fortune-landing/fortune-landing.component';
 import { AuthService } from './services/auth.service';
+import { UserLoginComponent } from './user-login/user-login.component';
+import { CommonModule } from '@angular/common';
+
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FortuneLandingComponent],
+  imports: [RouterOutlet, RouterModule, FortuneLandingComponent, UserLoginComponent, CommonModule],
   standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
