@@ -10,6 +10,7 @@ export class FortuneService {
     const fortunes = this.getFortunes();
     fortunes.push(fortune);
     localStorage.setItem(this.localStorageKey, JSON.stringify(fortunes));
+    // this.getFortunes();
   }
 
   getFortunes(): string[] {

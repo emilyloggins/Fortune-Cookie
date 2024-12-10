@@ -1,0 +1,46 @@
+
+<div class="login-container">
+    <h2>Login to Your Account</h2>
+  
+    <form (ngSubmit)="login()">
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          [(ngModel)]="email"
+          required
+          placeholder="Enter your email"
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          [(ngModel)]="password"
+          required
+          placeholder="Enter your password"
+        />
+      </div>
+  
+      <div class="form-group">
+        <button type="submit" [disabled]="!email || !password">
+          Login
+        </button>
+      </div>
+  
+      <div *ngIf="loginError" class="error-message">
+        <p>{{ loginError }}</p>
+      </div>
+  
+      <div class="signup-link">
+        <p>Don't have an account?</p>
+        <a routerLink="/signup">Sign up</a>
+      </div>
+    </form>
+  </div>
+  
