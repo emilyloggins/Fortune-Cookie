@@ -11,25 +11,25 @@ export class AuthService {
   private auth;
 
   constructor() {
-    this.firebaseApp = initializeApp(environment.firebaseConfig);
-    this.auth = getAuth(this.firebaseApp);
+      this.firebaseApp = initializeApp(environment.firebaseConfig);
+      this.auth! = getAuth(this.firebaseApp);
   }
 
   async login(email: string, password: string): Promise<any> {
-    return signInWithEmailAndPassword(this.auth, email, password);
+    return signInWithEmailAndPassword(this.auth!, email, password);
   }
 
   async signup(email: string, password: string): Promise<any> {
-    return createUserWithEmailAndPassword(this.auth, email, password);
+    return createUserWithEmailAndPassword(this.auth!, email, password);
   }
 
   logout(): Promise<void> {
-    return signOut(this.auth);
+    return signOut(this.auth!);
   }
 
   getUser() {
     return new Promise((resolve, reject) => {
-      onAuthStateChanged(this.auth, (user) => {
+      onAuthStateChanged(this.auth!, (user) => {
         resolve(user);
       }, reject);
     });
